@@ -8,5 +8,8 @@
 </head>
 <body>
 <h1>如果你看到此页面，则说明已成功运行</h1>
+<script>
+	window.location.href="user/login"
+</script>
 </body>
 </html>

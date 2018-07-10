@@ -6,8 +6,6 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import com.alibaba.druid.sql.visitor.functions.If;
-
 import top.hao456.ssm.login.dao.TbUserMapper;
 import top.hao456.ssm.login.entity.TbUser;
 import top.hao456.ssm.login.entity.TbUserExample;
@@ -33,6 +31,18 @@ public class UserServiceImpl implements UserService{
 		}
 		return null;
 	}
+
+	@Override
+	public List<TbUser> getUserListByUserName(String username) {
+		TbUserExample example = new TbUserExample();
+		Criteria criteria = example.createCriteria();
+		criteria.andUsernameEqualTo(username);
+		List<TbUser> list = this.tbUserMapper.selectByExample(example);
+		return list;
+	}
+	
+	
+	
 
 	
 	

@@ -12,11 +12,18 @@
 
 	<!-- 包扫描 -->
 	<context:component-scan base-package="top.hao456.ssm.*.controller" />
+	<context:component-scan base-package="top.hao456.ssm.common.conf" />
+	
+	<mvc:default-servlet-handler />
+	<mvc:resources location="classpath:/META-INF/resources/" mapping="swagger-ui.html"/>
+	<mvc:resources location="classpath:/META-INF/resources/webjars/" mapping="/webjars/**"/>
+
+
 	
 	<!--处理器映射器-->
-	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping" />
+	<!-- <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping" /> -->
 	<!--处理器适配器-->
-	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter" />
+	<!-- <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter" /> -->
 	
 	<!-- 注解驱动 可代替上面的处理器映射器和处理器适配器-->
 	<mvc:annotation-driven />
